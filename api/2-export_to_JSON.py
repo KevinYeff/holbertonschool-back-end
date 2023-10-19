@@ -2,17 +2,18 @@
 """Script that uses a rest API and request for a given
 employee ID and returns information about his/her TODO
 list progress"""
-#libraries
-import requests
+# libraries
 import json
+import requests
 from sys import argv
-#using the global variables
+# using the global variables
 EMPLOYEE_NAME = ''
 EMPLOYEE_ID = None
 NUMBER_OF_DONE_TASKS = 0
 TOTAL_NUMBER_OF_TASKS = 0
 TASK_TITLE = []
 EMPLOYEE_USERNAME = ''
+
 
 def get_api_response():
     """This function will gather and print data from an API."""
