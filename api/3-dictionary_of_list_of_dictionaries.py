@@ -48,10 +48,10 @@ def export_all_to_json(users, tasks):
                 TASK_COMPLETED_STATUS = task['completed']
                 TOTAL_NUMBER_OF_TASKS.append({"username": EMPLOYEE_USERNAME,
                                               "task": TASK_TITLE,
-                                              "completed": TASK_COMPLETED_STATUS})
+                                              "completed":
+                                                  TASK_COMPLETED_STATUS})
 
         all_employee_data[EMPLOYEE_ID] = TOTAL_NUMBER_OF_TASKS
-
 
     # Write all the data to a json file
     with open(f'todo_all_employees.json', 'w') as jsonfile:
