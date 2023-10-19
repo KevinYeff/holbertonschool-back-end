@@ -41,17 +41,10 @@ def get_api_response():
                 NUMBER_OF_DONE_TASKS += 1
             TOTAL_NUMBER_OF_TASKS += 1
 
-    # Print the format
-    print('Employee {} is done with tasks({}/{}):'
-          .format(EMPLOYEE_NAME,
-                  NUMBER_OF_DONE_TASKS,
-                  TOTAL_NUMBER_OF_TASKS))
-    # Print tab + todos completed
-    for title in TASK_TITLE:
-        print('\t {}'.format(title))
-
     # Export data to CSV
-    export_to_csv(EMPLOYEE_ID, EMPLOYEE_NAME, all_task_titles, completed_task_titles)
+    export_to_csv(EMPLOYEE_ID, EMPLOYEE_NAME, all_task_titles,
+                  completed_task_titles)
+
 
 def export_to_csv(user_id, user_name, all_task_titles, completed_task_titles):
     """Export data to a CSV file."""
@@ -60,7 +53,10 @@ def export_to_csv(user_id, user_name, all_task_titles, completed_task_titles):
         # quoting
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for title in all_task_titles:
-            completed_status = "True" if title in completed_task_titles else "False"
+            if title in completed_task_titles:
+                completed_status = "True"
+            else:
+                completed_status = "False"
             writer.writerow([user_id, user_name, completed_status, title])
 
 # Make sure the script doesn't execute when imported
