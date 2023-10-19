@@ -37,9 +37,10 @@ def get_api_response():
                 NUMBER_OF_DONE_TASKS += 1
             TOTAL_NUMBER_OF_TASKS += 1
     # print the format
-    print('Employee {} is done with tasks({}/{}):'.format(EMPLOYEE_NAME,
-                                                          NUMBER_OF_DONE_TASKS,
-                                                          TOTAL_NUMBER_OF_TASKS))
+    print('Employee {} is done with tasks({}/{}):'
+          .format(EMPLOYEE_NAME,
+                  NUMBER_OF_DONE_TASKS,
+                  TOTAL_NUMBER_OF_TASKS))
     # print tab + todos completed
     for title in TASK_TITLE:
         print('\t {}'.format(title))
@@ -47,4 +48,3 @@ def get_api_response():
 # make sure script doesn't execute when imported
 if __name__ == '__main__':
     get_api_response()
-  
